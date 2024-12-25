@@ -5,10 +5,10 @@ import { mockItems, mockShops } from "../MockData/mockItems";
 
 export default function ShopDetails() {
   const { shopId } = useParams(); // Get the shop ID from the URL
-  const shopItems = mockItems.filter(item => item.shopId === parseInt(shopId)); // Filter items by shopId
+  const shopItems = mockItems.filter((item) => item.shopId === parseInt(shopId)); // Filter items by shopId
 
   // Find the shop details using the shopId
-  const shop = mockShops.find(shop => shop.shopId === parseInt(shopId));
+  const shop = mockShops.find((shop) => shop.shopId === parseInt(shopId));
 
   if (!shop) {
     return <p>Shop not found.</p>;
@@ -20,32 +20,34 @@ export default function ShopDetails() {
 
   return (
     <div className="container">
-      {/* Shop Info Section */}
-      <h1>Shop: {shop.name}</h1>
-      <img src={shop.image} alt={shop.name} className="img-fluid mb-3" />
-      <p><strong>Description:</strong> {shop.description}</p>
-      <p><strong>Location:</strong> {shop.location}</p>
-      <p><strong>Contact:</strong> {shop.contact}</p>
+      <h1 className="mb-4">{shop.name}</h1>
+      <div className="row">
+        <div className="col-md-6">
+          <img
+            src={shop.image}
+            alt={shop.name}
+            className="img-fluid mb-4"
+          />
+        </div>
+        <div className="col-md-6">
+          <p><strong>Description:</strong> {shop.description}</p>
+          <p><strong>Location:</strong> {shop.location}</p>
+          <p><strong>Contact:</strong> {shop.contact}</p>
+        </div>
+      </div>
 
       {/* Items from the Shop Section */}
       <div className="mt-5">
         <h2>Items from {shop.name}</h2>
         <div className="row">
           {shopItems.map((item) => (
-            <div key={item.id} className="col-md-4 col-sm-6 mb-4">
-              <div className="card h-100">
-                <img
-                  src={item.image}
-                  className="card-img-top"
-                  alt={item.name}
-                  style={{ objectFit: "cover", height: "200px" }}
-                />
+            <div key={item.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <div className="card">
+                <img src={item.image} alt={item.name} className="card-img-top" />
                 <div className="card-body">
                   <h5 className="card-title">{item.name}</h5>
                   <p className="card-text">{item.description}</p>
-                  <p className="card-text">
-                    <strong>Price:</strong> ${item.price}
-                  </p>
+                  <p><strong>Price:</strong> ${item.price}</p>
                   <Link to={`/product/${item.id}`} className="btn btn-primary">
                     View Details
                   </Link>

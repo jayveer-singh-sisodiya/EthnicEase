@@ -36,38 +36,31 @@ export default function LandingPage() {
 
       {/* Items */}
       <div className="row">
-        {filteredItems.length > 0 ? (
-          filteredItems.map((item) => (
-            <div key={item.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
-              <div className="card h-100">
-                <img
-                  src={item.image}
-                  className="card-img-top"
-                  alt={item.name}
-                  style={{ objectFit: "cover", height: "200px" }}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{item.name}</h5>
-                  <p className="card-text">{item.description}</p>
-                  <p className="card-text">
-                    <strong>Price:</strong> ${item.price}
-                  </p>
-                  {/* View Product Details Button */}
-                  <Link
-                    to={`/ProductDetails/${item.id}`}
-                    className="btn btn-primary"
-                  >
-                    View Product Details
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))
-        ) : (
-          <div className="col-12">
-            <p className="text-center">No items found.</p>
+  {filteredItems.length > 0 ? (
+    filteredItems.map((item) => (
+      <div key={item.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div className="card">
+          <img src={item.image} alt={item.name} />
+          <div className="card-body">
+            <h5 className="card-title">{item.name}</h5>
+            <p className="card-text">{item.description}</p>
+            <p className="card-text">
+              <strong>Price:</strong> ${item.price}
+            </p>
+            <Link to={`/ProductDetails/${item.id}`} className="btn btn-primary">
+              View Product Details
+            </Link>
           </div>
-        )}
+        </div>
+      </div>
+    ))
+  ) : (
+    <div className="col-12">
+      <p className="text-center">No items found.</p>
+    </div>
+  )}
+
+
       </div>
     </div>
   );
