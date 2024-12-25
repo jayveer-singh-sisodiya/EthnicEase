@@ -1,0 +1,332 @@
+/* Base Colors */
+:root {
+    --background-dark: #1f1f1f;
+    --background-light: #2c2c2c;
+    --delft-blue: #677DB7;
+    --glaucous: #9CA3DB;
+    --royal-blue: #4169E1;
+    --lavender: #e4e4ff; /* Softer tone for readability */
+    --text-light: #f1f1f1; /* Light text for contrast */
+    --transparent-bg: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* General Styles */
+  body {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    color: var(--royal-blue);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--glaucous);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--delft-blue);
+  }
+  
+  /* Homepage Image */
+  .homepage-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+  }
+  
+  .homepage-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image scales proportionally while covering the container */
+  }
+  
+  .homepage-container .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--text-light);
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: var(--background-dark);
+    border-bottom: 2px solid var(--delft-blue);
+  }
+  
+  .navbar-brand {
+    color: var(--text-light);
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .navbar a {
+    color: var(--royal-blue);
+    font-weight: 500;
+  }
+  
+  .navbar a:hover {
+    color: var(--glaucous);
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    background-color: var(--royal-blue);
+    color: var(--text-light);
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--glaucous);
+    box-shadow: 0 4px 8px var(--delft-blue);
+  }
+  
+  .btn-secondary {
+    background-color: var(--delft-blue);
+    color: var(--text-light);
+    border: none;
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--glaucous);
+    box-shadow: 0 4px 8px var(--royal-blue);
+  }
+  
+  /* Cards */
+  .card {
+    background-color: var(--background-light);
+    border: none;
+    box-shadow: 0 4px 6px var(--delft-blue);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px var(--glaucous);
+  }
+  
+  .card-title {
+    color: var(--delft-blue);
+  }
+  
+  .card-text {
+    color: var(--text-light);
+  }
+  
+  /* Inputs and Forms */
+  input, select, textarea {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    border: 1px solid var(--delft-blue);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--royal-blue);
+    outline: none;
+  }
+  
+  /* Transparent and Blurry Effect for Forms */
+  .form-container {
+    background: var(--transparent-bg);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    margin: 50px auto;
+    color: var(--text-light);
+  }
+  
+  .form-container h2 {
+    color: var(--royal-blue);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-container .form-label {
+    color: var(--lavender);
+  }
+  
+  .form-container input {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    border: 1px solid var(--delft-blue);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  .form-container input:focus {
+    border-color: var(--royal-blue);
+    outline: none;
+  }
+  
+  .form-container button {
+    background-color: var(--royal-blue);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-container button:hover {
+    background-color: var(--glaucous);
+    box-shadow: 0 4px 8px var(--delft-blue);
+  }
+  
+  .form-container .alert {
+    background-color: var(--background-light);
+    color: var(--glaucous);
+    border: 1px solid var(--royal-blue);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .form-container p {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .form-container a {
+    color: var(--royal-blue);
+  }
+  
+  .form-container a:hover {
+    color: var(--glaucous);
+  }
+  
+  /* Carousel */
+  .carousel-inner img {
+    height: 500px; /* Limit height */
+    object-fit: cover; /* Ensures the image scales proportionally within the container */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--glaucous);
+  }
+  
+  .carousel-caption {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    color: var(--text-light);
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: invert(100%);
+  }
+  
+  /* Tables */
+  .table {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    border: 1px solid var(--delft-blue);
+    padding: 10px;
+  }
+  
+  .table th {
+    background-color: var(--delft-blue);
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: var(--glaucous);
+  }
+  
+  /* Dashboard */
+  .dashboard-container {
+    padding: 20px;
+    background-color: var(--background-light);
+    box-shadow: 0 4px 8px var(--delft-blue);
+    border-radius: 10px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 10px 0;
+    border-top: 2px solid var(--delft-blue);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-container {
+      padding: 20px;
+    }
+  
+    .form-container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .btn-lg {
+      font-size: 1rem;
+      padding: 10px 15px;
+    }
+  
+    .carousel-caption h5 {
+      font-size: 1.2rem;
+    }
+  
+    .navbar-brand {
+      font-size: 1.5rem;
+    }
+  }
+/* Full-Screen Background */
+.fullscreen-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+  }
+  
+  .fullscreen-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image scales proportionally while covering the container */
+    filter: blur(8px); /* Blurry effect */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Sends the image behind the content */
+  }
+  
+  /* Frosted Glass Form */
+  .form-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+  }
+  
+  .form-container h2 {
+    color: var(--royal-blue);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+    

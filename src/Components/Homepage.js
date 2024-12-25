@@ -11,7 +11,7 @@ export default function Homepage() {
 
   return (
     <div>
-      <div className="container d-flex justify-content-center position-relative">
+      <div className="homepage-container d-flex justify-content-center position-relative">
         <img
           src={image}
           style={{ width: '100%', backgroundColor: 'black' }}

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { mockItems} from "../MockData/mockItems";
-
+import { mockItems } from "../MockData/mockItems";
 
 export default function LandingPage() {
   const { category } = useParams(); // Get category from the URL
@@ -39,7 +38,7 @@ export default function LandingPage() {
       <div className="row">
         {filteredItems.length > 0 ? (
           filteredItems.map((item) => (
-            <div key={item.id} className="col-md-4 col-sm-6 mb-4">
+            <div key={item.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
               <div className="card h-100">
                 <img
                   src={item.image}
@@ -54,7 +53,10 @@ export default function LandingPage() {
                     <strong>Price:</strong> ${item.price}
                   </p>
                   {/* View Product Details Button */}
-                  <Link to={`/ProductDetails/${item.id}`} className="btn btn-primary">
+                  <Link
+                    to={`/ProductDetails/${item.id}`}
+                    className="btn btn-primary"
+                  >
                     View Product Details
                   </Link>
                 </div>
