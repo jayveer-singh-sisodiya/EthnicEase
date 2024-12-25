@@ -44,7 +44,7 @@ export default function ProductDetails() {
       {/* Similar Items Section */}
       <div className="mt-5">
         <h2>Similar Items</h2>
-        <div className="row">
+        <div className="row categories d-flex flex-wrap justify-content-center mt-4">
           {similarItems.length > 0 ? (
             similarItems.map((item) => (
               <div key={item.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
@@ -70,12 +70,12 @@ export default function ProductDetails() {
       </div>
 
       {/* Items from the Same Shop Section */}
-      <div className="mt-5 categories d-flex flex-wrap justify-content-center mt-4">
+      <div className="mt-5 ">
         <h2>Items from {product.shopName}</h2>
         <Link to={`/ShopDetails/${product.shopId}`} className="btn btn-info mb-3">
           View More from {product.shopName}
         </Link>
-        <div className="row">
+        <div className="row categories d-flex flex-wrap justify-content-center mt-4">
           {shopItems.length > 0 ? (
             shopItems.map((item) => (
               <div key={item.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
