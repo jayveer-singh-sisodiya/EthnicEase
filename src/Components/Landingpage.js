@@ -35,7 +35,7 @@ export default function LandingPage() {
       </div>
 
       {/* Items */}
-      <div className="row">
+      <div className="row categories d-flex flex-wrap justify-content-center mt-4">
   {filteredItems.length > 0 ? (
     filteredItems.map((item) => (
       <div key={item.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">

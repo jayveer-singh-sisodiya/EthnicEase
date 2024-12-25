@@ -37,7 +37,7 @@ export default function ShopDetails() {
       </div>
 
       {/* Items from the Shop Section */}
-      <div className="mt-5 container ">
+      <div className="mt-5 categories d-flex flex-wrap justify-content-center mt-4">
         <h2>Items from {shop.name}</h2>
         <div className="row">
           {shopItems.map((item) => (
