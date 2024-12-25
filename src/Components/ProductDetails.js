@@ -70,7 +70,7 @@ export default function ProductDetails() {
       </div>
 
       {/* Items from the Same Shop Section */}
-      <div className="mt-5">
+      <div className="mt-5 container">
         <h2>Items from {product.shopName}</h2>
         <Link to={`/ShopDetails/${product.shopId}`} className="btn btn-info mb-3">
           View More from {product.shopName}

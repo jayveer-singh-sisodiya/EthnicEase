@@ -37,7 +37,7 @@ export default function ShopDetails() {
       </div>
 
       {/* Items from the Shop Section */}
-      <div className="mt-5">
+      <div className="mt-5 container ">
         <h2>Items from {shop.name}</h2>
         <div className="row">
           {shopItems.map((item) => (
