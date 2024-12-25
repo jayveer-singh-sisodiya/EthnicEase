@@ -329,4 +329,53 @@
     text-align: center;
     margin-bottom: 20px;
   }
-    
+/* Standard Card Design */
+.card {
+    background-color: var(--background-light);
+    border: none;
+    box-shadow: 0 4px 6px var(--delft-blue);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 18rem; /* Fixed width for consistency */
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px var(--glaucous);
+  }
+  
+  .card img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    border-bottom: 1px solid var(--delft-blue);
+  }
+  
+  .card-body {
+    padding: 15px;
+    color: var(--text-light);
+  }
+  
+  .card-title {
+    color: var(--delft-blue);
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    color: var(--text-light);
+    margin-bottom: 10px;
+  }
+  
+  .card .btn {
+    background-color: var(--royal-blue);
+    color: var(--text-light);
+    border: none;
+  }
+  
+  .card .btn:hover {
+    background-color: var(--glaucous);
+    box-shadow: 0 4px 8px var(--delft-blue);
+  }
+  

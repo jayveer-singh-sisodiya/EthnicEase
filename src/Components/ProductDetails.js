@@ -22,9 +22,9 @@ export default function ProductDetails() {
   );
 
   return (
-    <div className="container">
+    <div className="container " >
       <h1 className="mb-4">{product.name}</h1>
-      <div className="row">
+      <div className="row" style={{height:"600px"}}>
         <div className="col-md-6">
           <img
             src={product.image}
@@ -54,7 +54,7 @@ export default function ProductDetails() {
                     <h5 className="card-title">{item.name}</h5>
                     <p className="card-text">{item.description}</p>
                     <p><strong>Price:</strong> ${item.price}</p>
-                    <Link to={`/product/${item.id}`} className="btn btn-primary">
+                    <Link to={`/ProductDetails/${item.id}`} className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -85,7 +85,7 @@ export default function ProductDetails() {
                     <h5 className="card-title">{item.name}</h5>
                     <p className="card-text">{item.description}</p>
                     <p><strong>Price:</strong> ${item.price}</p>
-                    <Link to={`/product/${item.id}`} className="btn btn-primary">
+                    <Link to={`/ProductDetails/${item.id}`} className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
