@@ -60,6 +60,9 @@
     background-color: var(--background-dark);
     border-bottom: 2px solid var(--delft-blue);
   }
+  .navbar-toggler {
+    border: 2px solid coral;
+  }
   
   .navbar-brand {
     color: var(--text-light);
