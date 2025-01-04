@@ -2,6 +2,8 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { mockItems, mockShops } from "../MockData/mockItems";
+import ShopCarousel from "./ShopCarousel";
+
 
 export default function ShopDetails() {
   const { shopId } = useParams(); // Get the shop ID from the URL
@@ -23,11 +25,7 @@ export default function ShopDetails() {
       <h1 className="mb-4">{shop.name}</h1>
       <div className="row">
         <div className="col-md-6">
-          <img
-            src={shop.image}
-            alt={shop.name}
-            className="img-fluid mb-4"
-          />
+        <ShopCarousel key={shop.shopId} shop={shop} />
         </div>
         <div className="col-md-6">
           <p><strong>Description:</strong> {shop.description}</p>

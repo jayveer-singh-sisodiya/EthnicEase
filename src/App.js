@@ -11,6 +11,7 @@ import ShopDetails from "./Components/ShopDetails";
 import UserDashboard from "./Components/UserDashboard";
 import ShopDashboard from "./Components/ShopDashboard";
 import './App.css';
+import Carousel from "./Components/Carousel";
 // Create a context to provide shop details
 export const ShopContext = createContext();
 
@@ -43,7 +44,22 @@ function App() {
           <Route path="/ProductDetails/:id" element={<ProductDetails />} /> {/* Product details route */}
           <Route path="/ShopDetails/:shopId" element={<ShopDetails />} /> {/* Shop details route */}
 
+
+
+
+
+          
+
+        {/* need to be changed or remove*/}
+          <Route path="/testingpage1" element={<Carousel />} /> {/*carosal testing pagee*/}
           {/* Role-based routes */}
+
+
+
+
+
+
+
           {role === "user" && <Route path="/user-dashboard" element={<UserDashboard />} />}
           {role === "shopkeeper" && <Route path="/shop-dashboard" element={<ShopDashboard />} />}
         </Routes>

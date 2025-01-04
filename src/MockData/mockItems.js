@@ -1,3 +1,4 @@
+
 const mockItems = [
   {
     id: 1,
@@ -6,9 +7,15 @@ const mockItems = [
     description: "A beautifully crafted handwoven silk saree by local artisans.",
     price: 120,
     tags: ["traditional", "handmade", "saree"],
-    image: "https://via.placeholder.com/300x200?text=Handwoven+Saree",
+    image1: "https://via.placeholder.com/300x200?text=Handwoven+Saree1",
+    image2: "https://via.placeholder.com/300x200?text=Handwoven+Saree2",
+    image3: "https://via.placeholder.com/300x200?text=Handwoven+Saree3",
+    image4: "https://via.placeholder.com/300x200?text=Handwoven+Saree4",
+    image5: "https://via.placeholder.com/300x200?text=Handwoven+Saree5",
     shopName: "Saree Heaven",
     shopId: 101,
+    index : "0",  
+    
   },
   {
     id: 2,
@@ -362,7 +369,12 @@ const mockShops = [
       "A haven for traditional and handcrafted sarees, offering a wide range of exquisite designs.",
     location: "Mumbai, India",
     contact: "+91 9876543210",
-    image: "https://via.placeholder.com/300x200?text=Saree+Shop",
+    image1: "https://via.placeholder.com/300x200?text=Saree+Shop1",
+    image2: "https://via.placeholder.com/300x200?text=Saree+Shop2",
+    image3: "https://via.placeholder.com/300x200?text=Saree+Shop3",
+    image4: "https://via.placeholder.com/300x200?text=Saree+Shop4",
+    image5: "https://via.placeholder.com/300x200?text=Saree+Shop5",
+
   },
   {
     shopId: 102,
@@ -410,8 +422,6 @@ const mockShops = [
     image: "https://via.placeholder.com/300x200?text=Terracotta+Treasures",
   },
 ];
-
-
 
 export { mockItems, mockShops };
 

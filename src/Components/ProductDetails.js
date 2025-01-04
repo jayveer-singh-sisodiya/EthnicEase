@@ -2,6 +2,9 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { mockItems } from "../MockData/mockItems";
+import ProductCarousel from "./ProductCarousel";
+
+
 
 export default function ProductDetails() {
   const { id } = useParams(); // Get the product ID from the URL
@@ -26,11 +29,7 @@ export default function ProductDetails() {
       <h1 className="mb-4">{product.name}</h1>
       <div className="row" style={{height:"600px"}}>
         <div className="col-md-6">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="img-fluid mb-4"
-          />
+        <ProductCarousel product={product} />
         </div>
         <div className="col-md-6">
           <p><strong>Description:</strong> {product.description}</p>
