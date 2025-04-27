@@ -12,6 +12,8 @@ import UserDashboard from "./Components/UserDashboard";
 import ShopDashboard from "./Components/ShopDashboard";
 import './App.css';
 import Carousel from "./Components/Carousel";
+import CreateProduct from "./Components/CreateProduct";
+
 // Create a context to provide shop details
 export const ShopContext = createContext();
 
@@ -43,7 +45,7 @@ function App() {
           <Route path="/Landingpage/:category" element={<Landingpage />} /> {/* Route for LandingPage */}
           <Route path="/ProductDetails/:id" element={<ProductDetails />} /> {/* Product details route */}
           <Route path="/ShopDetails/:shopId" element={<ShopDetails />} /> {/* Shop details route */}
-
+          <Route path="/CreateProduct" element={<CreateProduct />} /> {/* Shop details route */}
 
 
 

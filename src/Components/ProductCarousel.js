@@ -7,8 +7,7 @@ export default function ProductCarousel({ product = [] }) {
 
   return (
     <div className="product-carousel" style={{ width: "100%" }}>
-      <h3>{product.name}</h3>
-      <p>{product.description}</p>
+
       <div id={`carousel-${product.id}`} className="carousel slide">
         <div className="carousel-indicators">
           {images.map((_, index) => (

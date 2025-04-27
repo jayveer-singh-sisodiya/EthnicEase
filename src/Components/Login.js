@@ -1,42 +1,54 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import backgroundImage from "../Images/2071692.jpg"; // Update this path to match your project structure
+import axios from "axios";
+import backgroundImage from "../Images/2071692.jpg";
 
 export default function Login({ setUserRole }) {
   const navigate = useNavigate();
-  const [role, setRole] = useState(""); // State for the selected role
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
 
   const handleExploreClick = () => {
     navigate("/registration");
   };
 
-  const handleClickLogin = () => {
-    const email = document.querySelector("input[placeholder='Email']").value;
-    const password = document.getElementById("inputPassword5").value;
-
-    // Check if role, email, and password are provided
-    if (role && email && password) {
-      console.log("Login successful with role: " + role);
-      setUserRole(role); // Set the user role in the parent component (App.js)
-
-      // Redirect to different dashboards based on role
-      if (role === "user") {
-        navigate("/user-dashboard");
-      } else if (role === "shopkeeper") {
-        navigate("/shop-dashboard");
-      } else {
-        navigate("/"); // For guests, redirect to the homepage or any default page
+  const handleClickLogin = async () => {
+    if (email && password) {
+      try {
+        const response = await axios.post("https://localhost:44326/api/User/login", {
+          email,
+          password
+        });        
+        if (response.status === 200) {
+          const userData = response.data.user;
+          console.log("Login successful:", userData);
+  
+          setUserRole(userData.role);
+          localStorage.setItem("user", JSON.stringify(userData));
+  
+          console.log("Navigating based on role:", userData.role);
+  
+          if (userData.role === "user") {
+            navigate("/user-dashboard");
+          } else if (userData.role === "shopkeeper") {
+            navigate("/shop-dashboard");
+          } else {
+            navigate("/");
+          }
+        }
+      } catch (error) {
+        console.error("Login failed:", error.response?.data || error.message);
+        alert(error.response?.data || "Login failed. Please check your credentials.");
       }
     } else {
-      alert("Please select a role and enter valid email and password!");
+      alert("Please enter email and password!");
     }
   };
-
+  
   return (
     <div className="fullscreen-container">
-      {/* Background Image */}
       <img src={backgroundImage} alt="background" />
-      {/* Login Form */}
       <div className="form-container">
         <h2>Login</h2>
 
@@ -45,6 +57,8 @@ export default function Login({ setUserRole }) {
             className="form-control"
             type="text"
             placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             aria-label="Email"
           />
         </div>
@@ -57,20 +71,23 @@ export default function Login({ setUserRole }) {
             type="password"
             id="inputPassword5"
             className="form-control"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             aria-describedby="passwordHelpBlock"
           />
         </div>
 
-        {/* Role Selection Dropdown */}
+        {/* Role selection dropdown - OPTIONAL for registration, not needed for login */}
+        {/* Keeping it only if you want to register */}
         <div className="mb-3">
           <label htmlFor="roleSelect" className="form-label">
-            Select Role
+            Select Role (Optional for Registration)
           </label>
           <select
             id="roleSelect"
             className="form-select"
             value={role}
-            onChange={(e) => setRole(e.target.value)} // Update role state when selection changes
+            onChange={(e) => setRole(e.target.value)}
           >
             <option value="">Choose a role</option>
             <option value="user">User</option>

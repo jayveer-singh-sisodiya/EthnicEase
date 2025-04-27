@@ -29,6 +29,8 @@ export default function CategoriesPage() {
               <Link to={`/Landingpage/${category.title}`}className="btn btn-primary">
                 Explore
               </Link>
+
+              
             </div>
           </div>
         ))}
